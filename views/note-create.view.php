@@ -17,6 +17,7 @@
       rows="5"
       class="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
       placeholder="Write your note here..."
+      required
     ></textarea>
   </div>
 
