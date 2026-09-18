@@ -4,7 +4,7 @@ namespace Core;
 
 class Validator 
 {
-  public function string($value, $min = 1, $max = INF)
+  public static function string($value, $min = 1, $max = INF)
   {
     $value = trim($value);
 
