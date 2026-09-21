@@ -36,6 +36,7 @@
               name="email"
               placeholder="Email address"
               class="block w-full border-0 border-b border-gray-300 px-4 py-4 text-gray-900 placeholder:text-gray-400 focus:z-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              value="<?= old('email') ?>"
             >
             <?php if (isset($errors['email'])) : ?>
               <p class="text-red-500 text-xs mt-2"><?= $errors['email'] ?></p>
