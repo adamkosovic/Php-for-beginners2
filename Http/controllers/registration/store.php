@@ -3,6 +3,7 @@
 use Core\Validator;
 use Core\Database;
 use Core\App;
+use Core\Authenticator;
 
 $email = $_POST['email'];
 $password = $_POST['password']; 
@@ -31,18 +32,24 @@ $result = $db->query('select * from users where email = :email', [
 ])->find();
 
 
-if($user){
-  
-
-  header('location: /');
-  exit();  
+if($result){
+  return view('registration/create.view.php', [
+    'errors' => [
+        'email' => 'An account with this email already exists.'
+    ]
+  ]);
 } else {
   $db->query('INSERT INTO users (email, password) VALUES (:email, :password)', [
     'email' => $email,
     'password' => password_hash($password, PASSWORD_BCRYPT)
   ]);
 
-  login([
+  $userId = $db->connection->lastInsertId();
+
+  $auth = new Authenticator();
+
+  $auth->login([
+    'id' => $userId,
     'email' => $email
   ]);
 

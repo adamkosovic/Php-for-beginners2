@@ -15,9 +15,7 @@ class Authenticator
 
     if($user){
       if(password_verify($password, $user['password'])) {
-        $this->login([
-          'email' => $email
-        ]);
+        $this->login($user);
       
         header('location: /');
         exit();
@@ -32,6 +30,7 @@ class Authenticator
   public function login($user) 
   {
     $_SESSION['user'] = [
+      'id' => (int)$user['id'],
       'email' => $user['email']
     ];
 

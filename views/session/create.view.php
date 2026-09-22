@@ -26,7 +26,7 @@
 
 
       <!-- Form -->
-      <form method="POST" action="/sessions">
+      <form method="POST" action="/session">
 
         <!-- Email + Password -->
         <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-sm">
