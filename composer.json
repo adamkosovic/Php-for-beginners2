@@ -1,0 +1,26 @@
+{
+    "name": "adamkosovic/php-for-beginners2",
+    "authors": [
+        {
+            "name": "adamkosovic",
+            "email": "adam.kosovic@icloud.com"
+        }
+    ],
+    "require": {
+        "illuminate/collections": "^13.32"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^5.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
